@@ -11,10 +11,10 @@
 
 
 % Start a document with the here given default font size and paper size.
-\documentclass[10pt,a4paper]{article}
+\documentclass[]{shawnlower-cv}
 
 % Set the page margins.
-\usepackage[a4paper,margin=0.75in]{geometry}
+% \usepackage[a4paper,margin=0.75in]{geometry}
 
 % Setup the language.
 \usepackage[english]{babel}
@@ -23,105 +23,145 @@
 % Makes resume-specific commands available.
 \usepackage{resume}
 
-
-
-
 \begin{document}  % begin the content of the document
 \sloppy  % this to relax whitespacing in favour of straight margins
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\header{shawn}{lower\_ }{systems.\\networks.\\code.}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     Social Media / Contact links
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makebox[\textwidth][t]{%
+    %rfc3966 formatted phone number; should work on mobile, etc
+    \iconPhone\href{tel:+1-775-636-8066:}{ +1 (775) 636-8066}\sbull 
+    \iconHome\href{http://www.shawnlower.com/}{ www.shawnlower.com}\sbull
+    \iconGithub\href{https://github.com/shawnlower}{ github.com/shawnlower}\sbull
+    \iconTwitter\href{https://www.twitter.com/shawnlower}{ @shawnlower}\sbull
+    \iconLinkedIn\href{https://www.linkedin.com/in/shawnlower}{ linkedin->shawnlower}
+}
+
+%\linkbar{%
+%    \iconPhone{ +1 (775) 636-8066}\sbull
+%    \iconHome\href{http://www.shawnlower.com/}{ www.shawnlower.com}\sbull
+%    \iconGithub\href{https://github.com/shawnlower}{ github.com/shawnlower}\sbull
+%    \iconTwitter\href{https://www.twitter.com/shawnlower}{ @shawnlower}
+%}
 
 % title on top of the document
-\maintitle{Paul Schoenfelder}{April 12, 1987}{Last update on \today}
+% \rfoot{Paul Schoenfelder}{April 12, 1987}{Last update on \today}
 
 \nobreakvspace{0.3em}  % add some page break averse vertical spacing
 
-% \noindent prevents paragraph's first lines from indenting
-% \mbox is used to obfuscate the email address
-% \sbull is a spaced bullet
-% \href well..
-% \\ breaks the line into a new paragraph
-\noindent\href{mailto:paulschoenfelder@gmail.com}{paulschoenfelder\mbox{}@\mbox{}gmail.com}\sbull
-952-905-4095\sbull
-\href{http://bitwalker.org}{bitwalker.org}
-\\
-11600 Timberline Road\sbull
-Minnetonka\sbull
-Minnesota\sbull
-55305
-
-\spacedhrule{0.9em}{-0.4em}  % a horizontal line with some vertical spacing before and after
-
+\vspace{0.5em}  % some vertical spacing
 \roottitle{Summary}  % a root section title
 
-\vspace{-1.3em}  % some vertical spacing
 \begin{multicols}{2}  % open a multicolumn environment
-\noindent \emph{I'm a just a guy with a love for open source, languages and distributed computing, and a passion for developing high-quality software.}
-\\
-\\
-I started out in IT as a network engineer, working with Cisco equipment, but it wasn't long before I had delved in to writing scripts for automation. Once I had a taste for code, I knew it was where I belonged, and I was relentless in purusing an open developer position at the same company. I was given the opportunity, and I've been a software engineer ever since.
-
-I was thrown in to the world of software engineering, and had to learn fast. I soaked up books, blogs, talks, whatever I could. The tools I was given were C\#, HTML/CSS, Javascript, as well as Bash and Powershell. I picked up Ruby and a bit of Python for scripting not long after, and my curiousity was piqued. Slowly I've added Clojure, Scala, F\#, Erlang and Elixir to the list
-
-I'm active in open source. I experiment with embedded dev, and have a Pi and Arduino. I love functional programming and the challenges of concurrency and distribution. But most of all, I love building software.
+\lipsum[3]
 \end{multicols}
-
 
 \spacedhrule{0em}{-0.4em}
 
 \roottitle{Experience}
 
-\headedsection  % sets the header for the section and includes any subsections
-  {\href{http://www.exosite.com}{Exosite}}
-  {\textsc{Minneapolis, Minnesota}} {%
-  \headedsubsection
-    {Senior Web and Infrastructure Engineer}
-    {Oct \apo15 -- present}
-    {\bodytext{Lead developer on some of Exosite's most critical core services, built on Erlang and Elixir, with a few in Go. Learned a ton about AWS and Kubernetes in order to implement an OpenShift-based hosting platform for customer and internal applications. The applications I built we're distributed, highly concurrent infrastructure services, with all the resultant challenges. Heavily involved in the Erlang/Elixir community.}}
-}
+\vspace{0.5em}  % some vertical spacing
 
 \headedsection  % sets the header for the section and includes any subsections
-  {\href{http://www.nerdery.com}{The Nerdery}}
-  {\textsc{Bloomington, Minnesota}} {%
+  {\href{https://www.redhat.com/en/services}{Large U.S. Financial Services
+         Customer (on behalf of Red Hat)}}
+  {\textsc{Phoenix, AZ}} {%
   \headedsubsection
-    {Senior Software Engineer}
-    {Mar \apo13 -- Oct 15}
-    {\bodytext{Lead developer for a number of projects both large and small, managing teams of 2 to 8 devs. C# and Scala dev primarily. Built a number of open source libraries for the Elixir community, including contributions to the language itself. Focused on growing my FP, crypto, and concurrent/distributed programming skills.}}
+    {Senior OpenStack Enterprise Architect}
+    {July \apo{14} >> Mar. \apo{16}}
+    {\bodytext{
+    Assisted with major architectural redesign - moving from a proprietary VMware vCloud/vCAC environment to an Open Source model. The new architecture would be composed of OpenStack at the IaaS layer, OpenShift (Kubernetes/Docker/RHEL) for PaaS, and CloudForms for the automation and service catalog. My roles included:
+\begin{itemize}
+\item Leading the architecture and implementation of the OpenStack-based private cloud environment. The environment was split across multiple datacenters in multiple regions to support their globally distributed highly available architecture, as well as providing isolation amongst tiers (Dev/QA/etc).
+\item Assisted in designing workload migration tooling from VMware/VCAC including v2v and workflow
+\item Implemented a multi-type storage backend for (NAS/SAN/CEPH), with storage migration
+\item Provided assistance in performance tuning, optimization, and data backup
+\item Wrote internal Python tooling/scripts to assist in administrative tasks
+\item Provided training on Ansible (infrastructure systems) and Puppet (config management for workloads)
+\item Assisted automation team with integration with service catalog/lifecycle management requirements.
+\item Affinity/Anti-affinity/Storage tiering/etc
+\item Assisted in OSP5 (Icehouse) -> OSP7 (Kilo) migration
+\end{itemize}
+   }}
 }
 
-\headedsection  % sets the header for a subsection and contains usually body text
-  {\href{http://www.surgeforward.com}{Surge}}
-  {\textsc{Saint Paul, Minnesota}} {%
+\headedsection  % sets the header for the section and includes any subsections
+  {\href{https://www.redhat.com/en/services}{Growing Financial Services Startup}}
+  {\textsc{New York, NY}} {%
   \headedsubsection
-    {Senior Software Engineer}
-    {May \apo12 -- Mar \apo13}
-    {\bodytext{Lead developer on three projects, leading teams of 1-4 devs. Developed in-depth expertise with Adobe InDesign Server and InDesign Markup Language. Worked remotely the entirety of my time with Surge as a contractor.}}
+    {Senior Linux Consultant}
+    {Feb. \apo{10} >> Feb. \apo{14}}
+    {\bodytext{
+    Was brought into an early-stage startup to help build out their back-end infrastructure, using the newly launched 'Amazon Web Services'. The client \textemdash a provider of structured finance and investment analytics for the financial services industry \textemdash was running large (thousands of cores) analytics jobs using EC2. Some of the projects I worked on, included:
+\begin{itemize}
+  \item Writing a number of administrative scripts in Boto to interact with various services (EC2, S3, simpledb, etc)
+  \item Troubleshooting infrastructural issues with job scheduling (Boto, SQLite, APSW, simpledb)
+  \item Helping design/build-out a Puppet configuration management system that worked with ephemeral instances
+  \item Architecting the CI build system for Amazon machine image templates
+  \item Using NetFilter/iptables/iproute2 for L5/L7 policy based routing
+  \item Kerberos/OpenLDAP based authentication (later integrating Amazon IAM/Google SSO)
+\end{itemize}
+   }}
 }
 
-\headedsection
-  {\href{http://www.protolabs.com}{ProtoLabs Inc.}}
-  {\textsc{Maple Plain, Minnesota}} {%
+\headedsection  % sets the header for the section and includes any subsections
+  {\href{https://www.redhat.com/en/services}{Multiple customers on behalf of Red Hat}}
+  {\textsc{New York, NY}} {%
   \headedsubsection
-    {Software Engineer}
-    {Oct \apo10 -- May \apo12}
-    {\bodytext{Primary developer of numerous projects. Most developers at ProtoLabs fit in to one of two teams, web or backend - I was the exception, primarily devoted to R&D applications with focus towards internal process improvement and reporting/data mining capability.}}
+    {Linux Consultant}
+    {Feb. \apo{08} >> Feb. \apo{10}}
+    {\bodytext{
+    Multiple engagement covering numberous subject matter areas, including:
+    \begin{itemize}
+        \item Health checks and performance tuning
+        \item Infrastructure monitoring
+        \item Config management
+    \end{itemize}
+   }}
 }
 
-\headedsection
-  {United States Air Force}
-  {\textsc{Madison, Wisconsin}} {%
+\headedsection  % sets the header for the section and includes any subsections
+  {\href{https://en.wikipedia.org/wiki/BEA_Systems}{BEA Systems, Inc. (Weblogic), now Oracle, Inc.}}
+  {\textsc{Reno, NV}} {%
   \headedsubsection
-    {Avionic Systems Journeyman}
-    {Apr \apo09 -- Apr \apo15}
-    {\bodytext{My second job is with the Air National Guard/USAF out of Madison, WI - where I work as a flightline avionics technician on Lockheed Martin F-16C/D fighter jets. I’m currently a Senior Airman, working towards my Staff Sergeant stripes.}}
+    {Production Operations Engineer}
+    {Feb. \apo{07} >> Feb. \apo{08}}
+    {\bodytext{
+        As a member of the production operations team, we were responsible for ensuring the availability of the customer-facing websites. This included network and systems troubleshooting, patching, and assisting with on-call rotation. Skills utilized:
+    \begin{itemize}
+        \item Nagios
+        \item RHEL3/4/5
+        \item Solaris 8
+    \end{itemize}
+   }}
 }
 
-\headedsection
-  {Business Card Services, Inc.}
-  {\textsc{Burnsville, Minnesota}} {%
+\headedsection  % sets the header for the section and includes any subsections
+  {\href{}{Equity Lending Partners (formerly IntoHomes Mortgage Services)}}
+  {\textsc{Reno, NV}} {%
   \headedsubsection
-    {Software Developer}
-    {Oct \apo08 -- Dec \apo09}
-    {\bodytext{The entirety of my time at BCSI was spent as the primary developer behind a project to port a legacy manufacturing process written and maintained since the late 80’s to a modern, C# and ASP.NET driven system, while expanding it’s capabilities, and providing some new reporting and data mining features that the old system could not provide. After the first release of the new software, I left for training with the United States Air Force.}}
+    {System Administrator}
+    {Dec. \apo{05} >> Mar. \apo{07}}
+    {\bodytext{
+    Served as primary system administrator for mortgage broker/mortgage bank. Handled growth from a single location to 6 branches from Hawaii to Virginia. Skills utilized:
+    \begin{itemize}
+        \item Linux (Debian) for internal apps, monitoring, white box thin clients
+        \item Cisco routing/site-to-site VPNs
+        \item Windows Terminal Services (serving thin client infrastructure)
+    \end{itemize}
+   }}
 }
 
 
@@ -137,16 +177,12 @@ I'm active in open source. I experiment with embedded dev, and have a Pi and Ard
 
 \inlineheadsection  % special section that has an inline header with a 'hanging' paragraph
   {Technical expertise:}
-  {Software design and implementation. Testing, continuous deployment, and automation. Elixir/\nsp Erlang/\nsp Go/\nsp F\#/\nsp C\#/\nsp Clojure, and Ruby, with interest in many more. Thorough knowledge of web technologies:\ \acr{HTTP/TCP/TLS}, \acr{HTML+CSS}, JavaScript, \acr{XML}, \acr{REST}, and \acr{SOAP}. System administration skills:\ Shell scripting, nginx, HAProxy, Postgres\acr{SQL}, MSSQL, Docker, AWS, Kubernetes, Azure and \acr{VM}ware. Solid base in computer science fundamentals, data structures and algorithms.}
-\inlineheadsection
-  {Non-technical skills:}
-  {Can speak beginner-level Russian, and improving every day}
+  {
+\lipsum[1]
+}
 
 \roottitle{Interests}
 
 \inlineheadsection
-  {Non-exhaustive and in no particular order:}
-  {cryptography, artificial intelligence, game development, music, snowboarding, homebrewing, motorcycles, the outdoors, and more!}
-
 
 \end{document}
