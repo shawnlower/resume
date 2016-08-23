@@ -17,15 +17,16 @@
 %%%%%%%%%%%
 \usepackage{fancyhdr} % Embed the build date / revision in footer
 \usepackage{graphicx} % Use for drawing boxes and other figures
+\usepackage{hyperref}
 \usepackage{lipsum}   % Use to pad work experience :-)
 \usepackage{url}      % Embed URLs in document; works in PDF
-\RequirePackage{hyperref}
+\usepackage{resume}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 % Basic layout options %
 %%%%%%%%%%%%%%%%%%%%%%%%
-%\RequirePackage[left=0.5cm,top=2.5cm,right=0.5cm,bottom=0cm,nohead,nofoot]{geometry}
-\RequirePackage[left=0.5cm,top=2.0cm,right=0.5cm,bottom=0.0cm,nohead,nofoot]{geometry}
+%\RequirePackage[left=0.5cm,top=2.0cm,right=0.5cm,bottom=0.0cm,nohead,nofoot]{geometry}
 
 %%%%%%%%%%
 % Colors %
@@ -86,18 +87,17 @@ BoldItalicFont=Roboto-BoldItalic.ttf
 \definecolor{subheadings}{HTML}{333333}
 \definecolor{fillheader}{HTML}{EEEEEE}
 
-
 %%%%%%%%%%
 % Header %
 %%%%%%%%%%
 
 \RequirePackage{tikz}
 
-\newcommand{\rolefont}{%
-  \fontsize{14pt}{24pt}\selectfont%
-  \thinfont%
-  \color{white}%
-}
+%\newcommand{\rolefont}{%
+%  \fontsize{14pt}{24pt}\selectfont%
+%  \thinfont%
+%  \color{white}%
+%}
 
 \newcommand{\header}[3]{
   \begin{tikzpicture}[remember picture,overlay]
@@ -110,50 +110,9 @@ BoldItalicFont=Roboto-BoldItalic.ttf
       \begin{minipage}{2cm}{%
           \fontsize{12pt}{14pt}\color{headerdark}{\headingfont #3}%
       }\end{minipage}%
+
    };%
   \end{tikzpicture}%
-}
-
-
-%%%%%%%%%%%%%%
-%  Link bar  %
-%%%%%%%%%%%%%%
-
-\RequirePackage[absolute,overlay,showboxes]{textpos}
-\setlength{\TPHorizModule}{1cm}
-\setlength{\TPVertModule}{1cm}
-\newenvironment{linkbar}{%
-  \let\oldsection\section
-  \renewcommand{\section}[1]{
-    \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}
-  }
-  % {width from left?}{left margin}{from top}
-  \end{textblock}
-  \let\section\oldsection
-}
-
-
-%%%%%%%%%%%%%%
-% Side block %
-%%%%%%%%%%%%%%
-
-\RequirePackage[absolute,overlay,showboxes]{textpos}
-\setlength{\TPHorizModule}{1cm}
-\setlength{\TPVertModule}{1cm}
-\newenvironment{aside}{%
-  \let\oldsection\section
-  \renewcommand{\section}[1]{
-    \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}
-  }
-  % {width from left?}{left margin}{from top}
-  \begin{textblock}{0.0}(0.5, 3.2)
-  \begin{flushleft}
-  \obeycr
-}{%
-  \restorecr
-  \end{flushleft}
-  \end{textblock}
-  \let\section\oldsection
 }
 
 %%%%%%%%%
@@ -167,63 +126,26 @@ BoldItalicFont=Roboto-BoldItalic.ttf
 \newcommand*\iconPhone{\includegraphics[height=0.4cm]{icon-Phone.png}}
 \newcommand*\iconHome{\includegraphics[height=0.4cm]{icon-Home.png}}
 
+%%%%%%%%%%%%%%
+% Side block %
+%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%
-% Structure %
-%%%%%%%%%%%%%
-\RequirePackage{parskip}
-
-\newcounter{colorCounter}
-\def\@sectioncolor#1#2#3{%
-  {%
-    \color{%
-      \ifcase\value{colorCounter}%
-        blue\or%
-        red\or%
-        orange\or%
-        green\or%
-        purple\else%
-        headercolor\fi%
-    } #1#2#3%
-  }%
-  \stepcounter{colorCounter}%
-}
-
-\renewcommand{\section}[1]{
-  \par\vspace{\parskip}
-  {%
-    \LARGE\headingfont\color{headercolor}%
-    \@sectioncolor #1%
-  }
-  \par\vspace{\parskip}
-}
-
-\renewcommand{\subsection}[1]{
-  \par\vspace{.5\parskip}%
-  {%
-  \large\headingfont\color{headercolor} #1%
-  }
-  \par\vspace{.25\parskip}%
-}
-
-\pagestyle{empty}
-
-
-
-%%%%%%%%%%%%%%%%%%%%
-% List environment %
-%%%%%%%%%%%%%%%%%%%%
-
-\setlength{\tabcolsep}{0pt}
-\newenvironment{entrylist}{%
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
-}{%
-  \end{tabular*}
-}
-\renewcommand{\bfseries}{\headingfont\color{headercolor}}
-\newcommand{\entry}[4]{%
-  #1&\parbox[t]{10cm}{%
-    {\footnotesize\addfontfeature{Color=lightgray} #2}\\%
-    #3\vspace{\parsep}%
-  }\\}
+%\RequirePackage[absolute,overlay,showboxes]{textpos}
+%\setlength{\TPHorizModule}{1cm}
+%\setlength{\TPVertModule}{1cm}
+%\newenvironment{aside}{%
+%  \let\oldsection\section
+%  \renewcommand{\section}[1]{
+%    \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}
+%  }
+%  % {width from left?}{left margin}{from top}
+%  \begin{textblock}{0.0}(0.5, 5.2)
+%  \begin{flushleft}
+%  \obeycr
+%}{%
+%  \restorecr
+%  \end{flushleft}
+%  \end{textblock}
+%  \let\section\oldsection
+%}
 
