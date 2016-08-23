@@ -14,14 +14,11 @@
 \documentclass[]{shawnlower-cv}
 
 % Set the page margins.
-% \usepackage[a4paper,margin=0.75in]{geometry}
+\usepackage[a4paper,margin=0.75in]{geometry}
 
 % Setup the language.
 \usepackage[english]{babel}
 \hyphenation{Some-long-word}
-
-% Makes resume-specific commands available.
-\usepackage{resume}
 
 \begin{document}  % begin the content of the document
 \sloppy  % this to relax whitespacing in favour of straight margins
@@ -40,26 +37,17 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\makebox[\textwidth][t]{%
+\nobreakvspace{1.0em}  % add some page break averse vertical spacing
+\makebox[\textwidth][c]{%
     %rfc3966 formatted phone number; should work on mobile, etc
     \iconPhone\href{tel:+1-775-636-8066:}{ +1 (775) 636-8066}\sbull 
     \iconHome\href{http://www.shawnlower.com/}{ www.shawnlower.com}\sbull
     \iconGithub\href{https://github.com/shawnlower}{ github.com/shawnlower}\sbull
     \iconTwitter\href{https://www.twitter.com/shawnlower}{ @shawnlower}\sbull
-    \iconLinkedIn\href{https://www.linkedin.com/in/shawnlower}{ linkedin->shawnlower}
+    %\iconLinkedIn\href{https://www.linkedin.com/in/shawnlower}{ linkedin->shawnlower}
 }
 
-%\linkbar{%
-%    \iconPhone{ +1 (775) 636-8066}\sbull
-%    \iconHome\href{http://www.shawnlower.com/}{ www.shawnlower.com}\sbull
-%    \iconGithub\href{https://github.com/shawnlower}{ github.com/shawnlower}\sbull
-%    \iconTwitter\href{https://www.twitter.com/shawnlower}{ @shawnlower}
-%}
-
-% title on top of the document
-% \rfoot{Paul Schoenfelder}{April 12, 1987}{Last update on \today}
-
-\nobreakvspace{0.3em}  % add some page break averse vertical spacing
+%\nobreakvspace{0.3em}  % add some page break averse vertical spacing
 
 \vspace{0.5em}  % some vertical spacing
 \roottitle{Summary}  % a root section title
@@ -148,8 +136,10 @@
    }}
 }
 
+\lipsum[4]
+
 \headedsection  % sets the header for the section and includes any subsections
-  {\href{}{Equity Lending Partners (formerly IntoHomes Mortgage Services)}}
+  {Equity Lending Partners (formerly IntoHomes Mortgage Services)}
   {\textsc{Reno, NV}} {%
   \headedsubsection
     {System Administrator}
@@ -165,11 +155,50 @@
 }
 
 
-\vspace{-0.2em}
-\begin{center}
-  \emph{\small Please refer to my \href{http://www.linkedin.com/in/gotbones}{Linked-in profile} for more a more complete list of my work experiences along with recommendations.}
-\end{center}
+\section{education}
 
+\begin{entrylist}
+  \entry
+    {2016-04-01}
+    {Red Hat Certified Engineer (Red Hat Enterprise Linux 7)}
+    {EX302}
+    {~}
+  \entry{2016-01-24}
+    {Red Hat Certified System Administrator in Red Hat OpenStack}
+    {EX333}
+    {~}
+  \entry
+    {2015-12-16}
+    {Red Hat OpenShift Enterprise Administration}
+    {DO280}
+    {~}
+  \entry{2008-07-18}
+    {Red Hat Certificate of Expertise in Directory Services and Authentication}
+    {EX423}
+    {~}
+  \entry{2009-04-03}
+    {Red Hat Enterprise Security: Network Services Expertise}
+    {EX333}
+    {~}
+  \entry{2009-04-010}
+    {Red Hat Certificate of Expertise in Performance Tuning}
+    {EX442}
+    {~}
+  \entry{2008-06-27}
+    {Red Hat Certificate of Expertise in Clustering and Storage Management}
+    {EX436}
+    {~}
+  \entry{2008-05-23}
+    {Red Hat Certificate of Expertise in Deployment and Systems Management}
+    {EX401}
+    {~}
+  \entry
+    {2008-03-14}
+    {Red Hat Certified Engineer (Red Hat Enterprise Linux 5)}
+    {EX302}
+    {~}
+}
+\end{entrylist}
 
 \spacedhrule{-0.2em}{-0.4em}
 
