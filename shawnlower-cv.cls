@@ -15,6 +15,7 @@
 %%%%%%%%%%%
 % Imports %
 %%%%%%%%%%%
+
 \usepackage{fancyhdr} % Embed the build date / revision in footer
 \usepackage{graphicx} % Use for drawing boxes and other figures
 \usepackage{hyperref}
@@ -26,7 +27,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%
 % Basic layout options %
 %%%%%%%%%%%%%%%%%%%%%%%%
-%\RequirePackage[left=0.5cm,top=2.0cm,right=0.5cm,bottom=0.0cm,nohead,nofoot]{geometry}
+%\RequirePackage[left=1.0cm,top=1.0cm,right=1.0cm,bottom=1.0cm,nohead,nofoot]{geometry}
+\usepackage[letterpaper,margin=1.0cm,top=1.0cm]{geometry}
 
 %%%%%%%%%%
 % Colors %

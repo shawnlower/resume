@@ -14,11 +14,14 @@
 \documentclass[]{shawnlower-cv}
 
 % Set the page margins.
-\usepackage[a4paper,margin=0.75in]{geometry}
+%\usepackage[a4paper,margin=0.75in]{geometry}
 
 % Setup the language.
 \usepackage[english]{babel}
 \hyphenation{Some-long-word}
+
+% To allow header/footer
+\usepackage[fancyhdr]
 
 \begin{document}  % begin the content of the document
 \sloppy  % this to relax whitespacing in favour of straight margins
@@ -29,7 +32,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\header{shawn}{lower\_ }{systems.\\networks.\\code.}%
+\header{shawn}{lower\_ }{systems.\\networking.\\code.}%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -37,24 +40,35 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\nobreakvspace{1.0em}  % add some page break averse vertical spacing
+\nobreakvspace{3.0em}  % add some page break averse vertical spacing
 \makebox[\textwidth][c]{%
     %rfc3966 formatted phone number; should work on mobile, etc
-    \iconPhone\href{tel:+1-775-636-8066:}{ +1 (775) 636-8066}\sbull 
-    \iconHome\href{http://www.shawnlower.com/}{ www.shawnlower.com}\sbull
-    \iconGithub\href{https://github.com/shawnlower}{ github.com/shawnlower}\sbull
-    \iconTwitter\href{https://www.twitter.com/shawnlower}{ @shawnlower}\sbull
-    %\iconLinkedIn\href{https://www.linkedin.com/in/shawnlower}{ linkedin->shawnlower}
+    \iconPhone\href{tel:+1-775-636-8066:}{ +1 (775) 636-8066}
+    \sbull\iconHome\href{http://www.shawnlower.com/}{ www.shawnlower.com}
+    \sbull\iconGithub\href{https://github.com/shawnlower}{ github.com/shawnlower}
+    \sbull\iconTwitter\href{https://www.twitter.com/shawnlower}{ @shawnlower}
+    %\sbull\iconLinkedIn\href{https://www.linkedin.com/in/shawnlower}{ linkedin->shawnlower}
 }
-
+%
 %\nobreakvspace{0.3em}  % add some page break averse vertical spacing
+%
 
-\vspace{0.5em}  % some vertical spacing
+\setlength\multicolsep{2pt}
+\setlength{\parskip}{4pt}
+
 \roottitle{Summary}  % a root section title
 
 \begin{multicols}{2}  % open a multicolumn environment
-\lipsum[3]
+\setlength{\parskip}{4pt}%
+I've spent the last 15 years building and maintaining systems using Linux and Open Source. From managing financial analytics jobs run across thousands of cores in AWS, to architecting private clouds in OpenStack, troubleshooting performance issues, and even network security and forensics.
+
+My life began in the operations/system administration world, but I recognized early on the necessity of applying software development processes to managing infrastructure. While my early days consisted primarily of using perl/ksh/bash to automate tasks, when I began working on larger systems within AWS I delved deeper into Python, ipython, and the excellent boto library. Working with a team of software developers, led by a CTO who was passionate about reliability, idempotency (e.g. in configuration management), and minimizing local state I grew my development skillset significantly.
+
+More recently, I've been working extensively with the (Python based) OpenStack project. This has offered the opportunity to become intimately familiar with a number of challenges that arise when deploying infrastructure software at scale.
+
 \end{multicols}
+
+\vspace{1.0em}  % some vertical spacing
 
 \spacedhrule{0em}{-0.4em}
 
@@ -84,6 +98,7 @@
 \end{itemize}
    }}
 }
+
 
 \headedsection  % sets the header for the section and includes any subsections
   {\href{https://www.redhat.com/en/services}{Growing Financial Services Startup}}
@@ -136,7 +151,6 @@
    }}
 }
 
-\lipsum[4]
 
 \headedsection  % sets the header for the section and includes any subsections
   {Equity Lending Partners (formerly IntoHomes Mortgage Services)}
@@ -155,63 +169,68 @@
 }
 
 
-\section{education}
+\roottitle{Education/Certifications}
 
-\begin{entrylist}
-  \entry
-    {2016-04-01}
+\headedsection  % sets the header for the section and includes any subsections
+  {Red Hat Certified Engineer (Red Hat Enterprise Linux 7)}
+  {2016-04-01}
+  {\bodytext{%
+  {EX300}}}
+
+\headedsection
     {Red Hat Certified Engineer (Red Hat Enterprise Linux 7)}
-    {EX302}
-    {~}
-  \entry{2016-01-24}
+    {2016-04-01}
+    {\bodytext{%
+    {EX300}}}
+
+\headedsection
     {Red Hat Certified System Administrator in Red Hat OpenStack}
-    {EX333}
-    {~}
-  \entry
-    {2015-12-16}
+    {2016-01-24}
+    {\bodytext{%
+    {EX333}}}
+
+\headedsection
     {Red Hat OpenShift Enterprise Administration}
-    {DO280}
-    {~}
-  \entry{2008-07-18}
+    {2015-12-16}
+    {\bodytext{%
+    {DO280}}}
+
+\headedsection
     {Red Hat Certificate of Expertise in Directory Services and Authentication}
-    {EX423}
-    {~}
-  \entry{2009-04-03}
+    {2008-07-18}
+    {\bodytext{%
+    {EX423}}}
+
+\headedsection
     {Red Hat Enterprise Security: Network Services Expertise}
-    {EX333}
-    {~}
-  \entry{2009-04-010}
+    {2009-04-03}
+    {\bodytext{%
+    {EX333}}}
+
+\headedsection
     {Red Hat Certificate of Expertise in Performance Tuning}
-    {EX442}
-    {~}
-  \entry{2008-06-27}
+    {2009-04-010}
+    {\bodytext{%
+    {EX442}}}
+
+\headedsection
     {Red Hat Certificate of Expertise in Clustering and Storage Management}
-    {EX436}
-    {~}
-  \entry{2008-05-23}
+    {2008-06-27}
+    {\bodytext{%
+    {EX436}}}
+
+\headedsection
     {Red Hat Certificate of Expertise in Deployment and Systems Management}
-    {EX401}
-    {~}
-  \entry
-    {2008-03-14}
+    {2008-05-23}
+    {\bodytext{%
+    {EX401}}}
+
+\headedsection
     {Red Hat Certified Engineer (Red Hat Enterprise Linux 5)}
-    {EX302}
-    {~}
-}
-\end{entrylist}
+    {2008-03-14}
+    {\bodytext{%
+    {EX300}}}
 
-\spacedhrule{-0.2em}{-0.4em}
-
-\roottitle{Skills}
-
-\inlineheadsection  % special section that has an inline header with a 'hanging' paragraph
-  {Technical expertise:}
-  {
-\lipsum[1]
-}
-
-\roottitle{Interests}
-
-\inlineheadsection
-
+\chead{Document generated \today}
+\cfoot{Document generated \today}
 \end{document}
