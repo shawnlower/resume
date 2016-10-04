@@ -61,18 +61,18 @@
 \RequirePackage[quiet]{fontspec}
 
 \newfontfamily\bodyfont
-[BoldFont=Roboto-Bold.ttf,
+[Path = res/, BoldFont=Roboto-Bold.ttf,
 ItalicFont=Roboto-Italic.ttf,
 BoldItalicFont=Roboto-BoldItalic.ttf]
 {Roboto-Regular.ttf}
 
-\newfontfamily\thinfont[]{Roboto-Thin.ttf}
-\newfontfamily\headingfont[]{Jura-Medium.ttf}
-\newfontfamily\subheadingfont[]{Jura-Medium.ttf}
+\newfontfamily\thinfont[Path = res/]{Roboto-Thin.ttf}
+\newfontfamily\headingfont[Path = res/]{Jura-Medium.ttf}
+\newfontfamily\subheadingfont[Path = res/]{Jura-Medium.ttf}
 \defaultfontfeatures{Mapping=tex-text}
 
 \setmainfont
-[Mapping=tex-text, Color=textcolor,
+[Path = res/, Mapping=tex-text, Color=textcolor,
 BoldFont=Roboto-Bold.ttf,
 ItalicFont=Roboto-Italic.ttf,
 BoldItalicFont=Roboto-BoldItalic.ttf
@@ -121,12 +121,12 @@ BoldItalicFont=Roboto-BoldItalic.ttf
 % Icons %
 %%%%%%%%%
 
-\newcommand*\iconGithub{\includegraphics[height=0.4cm]{icon-GitHub-32px}}
-\newcommand*\iconTwitter{\includegraphics[height=0.4cm]{icon-Twitter-blue.png}}
-\newcommand*\iconLinkedIn{\includegraphics[height=0.4cm]{icon-LinkedIn.png}}
-\newcommand*\iconMail{\includegraphics[height=0.4cm]{icon-Mail.png}}
-\newcommand*\iconPhone{\includegraphics[height=0.4cm]{icon-Phone.png}}
-\newcommand*\iconHome{\includegraphics[height=0.4cm]{icon-Home.png}}
+\newcommand*\iconGithub{\includegraphics[height=0.4cm]{res/icon-GitHub-32px}}
+\newcommand*\iconTwitter{\includegraphics[height=0.4cm]{res/icon-Twitter-blue.png}}
+\newcommand*\iconLinkedIn{\includegraphics[height=0.4cm]{res/icon-LinkedIn.png}}
+\newcommand*\iconMail{\includegraphics[height=0.4cm]{res/icon-Mail.png}}
+\newcommand*\iconPhone{\includegraphics[height=0.4cm]{res/icon-Phone.png}}
+\newcommand*\iconHome{\includegraphics[height=0.4cm]{res/icon-Home.png}}
 
 %%%%%%%%%%%%%%
 % Side block %
